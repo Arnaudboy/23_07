@@ -8,7 +8,7 @@ attr_accessor :name, :life_points
 	end
 
 	def show_state #On entre Player1 ou 2 pour lire son niveau de vie
-		"#{@name} a #{life_points} points de vie"
+		"#{@name} a #{@life_points} points de vie"
 	end
 
   def gets_damage(int) #Il est temps de donné des coups

@@ -35,14 +35,12 @@ while human.life_points >0 && (player1.life_points > 0 || player2.life_points >0
 	puts "0 - #{player1.show_state} "
 	puts "1 - #{player2.show_state}"
 user_input = gets.chomp
-  if user_input == "a"
+  if user_input == "a"#Besoin d'un plus gros gun ?
     human.search_weapon
-  elsif user_input == "s"
+  elsif user_input == "s"#Besoin d'un petit remontant ?
     human.search_health_pack
-  elsif user_input == 0 || user_input == 1
-  	human.attacks(ennemies[user_input.to_i]) #pas d'akternative si on tappe autre chose que les options demandées
-  else !["a", "s", 0, 1] #Maintenant c'est fait
-  	puts "Choisi parmi les options demandées. Tu perds un tour"
+  else user_input == 0 || user_input == 1#Attaque des bots, ici on garde des integers et pas des string car on s'en sert pour trouver un index du tableau ennemie
+  	human.attacks(ennemies[user_input.to_i]) 
   end
 #-------------------------------------------------------------------------------------------------------------------------------------  
   ennemies.each do |ennemy| #attaque de tous les ennemies

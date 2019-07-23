@@ -25,5 +25,6 @@ WARNING !!!!!!!!!!!!!!!!!!!!! SI TU CHOISIS UNE AUTRE OPTION QUE CELLE QUI TE SE
 
 TROISIEME JEU
 
-PAS COMMENCER :'(
-JE VEUX DORMIR BORDEL
+Ce jeux t'opposeras cette fois-ci à 4 oppposants. Même warning que précédement. Tu remarqueras que notre app_3.rb fait en fait uniquement appel aux fonctions dans /lib/game.rb. Tu ne trouveras ici aucune des fonctions supplémentaires parceque je n'arrive pas à coder et dormir en même temps.
+
+BISOUS
