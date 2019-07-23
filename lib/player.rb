@@ -11,17 +11,16 @@ attr_accessor :name, :life_points
 		"#{@name} a #{life_points} points de vie"
 	end
 
-	def gets_damage(damage)
-		life_points = @life_points
-		life_points -= damage
-			puts "#{name} est DEAD" if @life_points <= 0
-	end
+  def gets_damage(int)
+    @life_points = [@life_points - int, 0].max
+    puts "Le joueur #{@name} a été tué !" if @life_points == 0
+  end
 
 	def attacks(player_attacked)
 		puts "#{name} attaque #{player_attacked.name}\n"
 		hit = compute_damage
 		puts "#{name} à infligé #{hit} dommage à #{player_attacked.name}"
-		player_attacked.life_points = gets_damage(hit)
+		player_attacked.gets_damage(hit)
 	end
 
 	def compute_damage
@@ -35,9 +34,9 @@ class Human_Player < Player
 	attr_accessor :weapon_level
 
 	def initialize(name)
+		super(name)
 		@weapon_level = 1
 		@life_points = 100
-		super(name)
 	end
 
 	def compute_damage
@@ -45,9 +44,13 @@ class Human_Player < Player
   end
 
   def search_weapon
-  	weapon_level == rand(1..6)
-  	puts "Tu as trouvé une arme de niveau #{weapon_level}"
-  	weapon_level > @weapon_level ? weapon_level = @weapon_level : @weapon_level = @weapon_level	
+  	level = rand(1..6)
+  	puts "Tu as trouvé une arme de niveau #{level}"
+  	if level > @weapon_level 
+  		@weapon_level = level
+  	else
+  	  puts "Goddam l'arme n'est pas meilleure"
+  	end	
   end
 
   def search_health_pack

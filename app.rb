@@ -17,8 +17,7 @@ while player1.life_points > 0 && player2.life_points > 0
 
 	puts player1.attacks(player2)
 		break	if player2.life_points <= 0 
-	puts player2.attacks(player1)
-	
+	puts player2.attacks(player1)	
 
 end
 binding.pry
